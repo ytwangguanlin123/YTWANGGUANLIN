@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>aframe demo</title>
+    <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="box" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/233187/crate-texture.jpg" crossorigin="anonymous">
+            <img id="walls" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/233187/brick-texture.jpg" crossorigin="anonymous">
+            <img id="ceiling" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/233187/wood-texture.jpg" crossorigin="anonymous">
+            <img id="floor" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/233187/tile-texture.jpg" crossorigin="true">
+        </a-assets>
+
+        <a-box color="#FFF" width="1.5" height="1.5" depth="1.5" position="-0.75 0.5 0" rotation="0 45 0" src="#box">
+        </a-box>
+        <a-box color="#FFF" width="1.5" height="1.5" depth="1.5" position="1.4 0.5 0" rotation="0 -45 0" src="#box">
+        </a-box>
+        <!-- Top Box -->
+        <a-box color="#FFF" width="1.5" height="1.5" depth="1.5" position="0.05 2.02 -0.1" rotation="0 25 0" src="#box">
+        </a-box>
+
+        <!-- Walls -->
+        <a-box color="#FFF" width="20" height="20" position="-10 0 0" rotation="0 90 0" src="#walls">
+        </a-box>
+        <a-box color="#FFF" width="20" height="20" position="0 0 -10" src="#walls">
+        </a-box>
+        <a-box color="#FFF" width="20" height="20" position="10 0 0" rotation="0 90 0" src="#walls">
+        </a-box>
+        <a-box color="#FFF" width="20" height="20" position="0 0 10" src="#walls">
+        </a-box>
+        <!-- Ceiling -->
+        <a-box color="#FFF" width="20" height="20" position="0 10 0" rotation="90 0 0" src="#ceiling"></a-box>
+
+        <!-- New lights. -->
+        <a-light type="spot" color="#fff" position="5 5 3" look-at="a-box" intensity="1.5"> </a-light>
+        <a-light type="point" color="#AAA" position="-5 5 7" intensity="0.375"></a-light>
+
+        <!-- Sky / Background -->
+        <a-sky color="#000"></a-sky>
+
+        <!-- Floor -->
+        <a-plane rotation="-90 0 0" position="2 -1 -2" color="#aaa" width="60" height="50" depth="2" src="#floor"></a-plane>
+
+    </a-scene>
+</body>
+
+</html>
